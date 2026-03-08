@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A-Z Diseases Directory - Health & Wellness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .alphabet-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+        .alpha-link {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all var(--transition-fast);
+        }
+        .alpha-link:hover {
+            background: var(--color-primary);
+            color: var(--color-white);
+            border-color: var(--color-primary);
+        }
+        .alpha-section {
+            margin-bottom: 3rem;
+        }
+        .alpha-header {
+            font-size: 2rem;
+            color: var(--color-primary-dark);
+            border-bottom: 2px solid var(--color-border);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .disease-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .disease-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--color-white);
+            border-radius: 0.5rem;
+            border: 1px solid var(--color-border);
+            transition: all var(--transition-fast);
+        }
+        .disease-item:hover {
+            transform: translateX(5px);
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-sm);
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Global Navigation -->
+        <header class="header">
+            <div class="container nav">
+                <a href="index.html" class="logo">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-secondary)"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    Health<span>Care</span>
+                </a>
+                
+                <nav class="nav-links">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="diseases.html" class="nav-link active">Diseases Base</a>
+                    <a href="diet-plans.html" class="nav-link">Diet Plans</a>
+                    <a href="workouts.html" class="nav-link">Workouts</a>
+                    <a href="about.html" class="nav-link">About Us</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+
+                <div class="flex items-center gap-4">
+                    <button class="lang-toggle" id="langToggle">اردو</button>
+                    <button class="menu-btn" aria-label="Toggle Menu">☰</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main style="padding: 4rem 0;">
+            <div class="container">
+                <div class="text-center mb-8">
+                    <h1 class="mb-4" style="font-size: 3rem; color: var(--color-primary-dark);">Condition Index</h1>
+                    <p class="text-muted" style="max-width: 600px; margin: 0 auto;">Select a condition below to view its dedicated medical guide, including specialized dietary charts and daily exercise templates.</p>
+                </div>
+
+                <!-- A-Z Navigation -->
+                <div class="alphabet-nav">
+                    <a href="#A" class="alpha-link">A</a>
+                    <a href="#B" class="alpha-link">B</a>
+                    <a href="#C" class="alpha-link">C</a>
+                    <a href="#D" class="alpha-link">D</a>
+                    <a href="#H" class="alpha-link">H</a>
+                    <a href="#O" class="alpha-link">O</a>
+                    <a href="#P" class="alpha-link">P</a>
+                    <a href="#T" class="alpha-link">T</a>
+                </div>
+
+                <!-- Disease Dictionary Sections -->
+                
+                <div id="A" class="alpha-section">
+                    <h2 class="alpha-header">A</h2>
+                    <div class="disease-list">
+                        <a href="guide.html?disease=anemia" class="disease-item">
+                            <span style="font-size: 1.2rem; color: var(--color-primary);">&bull;</span>
+                            <span style="font-weight: 500;">Anemia</span>
+                        </a>
+                        <a href="guide.html?disease=asthma" class="disease-item">
+                            <span style="font-size: 1.2rem; color: var(--color-primary);">&bull;</span>
+                            <span style="font-weight: 500;">Asthma</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="D" class="alpha-section">
+                    <h2 class="alpha-header">D</h2>
+                    <div class="disease-list">
+                        <a href="guide.html?disease=diabetes" class="disease-item">
+                            <span style="font-size: 1.2rem; color: var(--color-primary);">&bull;</span>
+                            <span style="font-weight: 500;">Diabetes (Type 1 & 2)</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="H" class="alpha-section">
+                    <h2 class="alpha-header">H</h2>
+                    <div class="disease-list">
+                        <a href="guide.html?disease=hypertension" class="disease-item">
+                            <span style="font-size: 1.2rem; color: var(--color-primary);">&bull;</span>
+                            <span style="font-weight: 500;">Hypertension (High Blood Pressure)</span>
+                        </a>
+                        <a href="guide.html?disease=hyperthyroidism" class="disease-item">
+                            <span style="font-size: 1.2rem; color: var(--color-primary);">&bull;</span>
+                            <span style="font-weight: 500;">Hyperthyroidism</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="O" class="alpha-section">
+                    <h2 class="alpha-header">O</h2>
+                    <div class="disease-list">
+                        <a href="guide.html?disease=obesity" class="disease-item">
+                            <span style="font-size: 1.2rem; color: var(--color-primary);">&bull;</span>
+                            <span style="font-weight: 500;">Obesity</span>
+                        </a>
+                        <a href="guide.html?disease=osteoporosis" class="disease-item">
+                            <span style="font-size: 1.2rem; color: var(--color-primary);">&bull;</span>
+                            <span style="font-weight: 500;">Osteoporosis</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="P" class="alpha-section">
+                    <h2 class="alpha-header">P</h2>
+                    <div class="disease-list">
+                        <a href="guide.html?disease=pcos" class="disease-item">
+                            <span style="font-size: 1.2rem; color: var(--color-primary);">&bull;</span>
+                            <span style="font-weight: 500;">PCOS / PCOD</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="T" class="alpha-section">
+                    <h2 class="alpha-header">T</h2>
+                    <div class="disease-list">
+                        <a href="guide.html?disease=thyroid" class="disease-item">
+                            <span style="font-size: 1.2rem; color: var(--color-primary);">&bull;</span>
+                            <span style="font-weight: 500;">Thyroid Disorders</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- Sticky Footer & Medical Disclaimer -->
+        <footer class="footer">
+            <div class="container grid grid-cols-3 gap-8" style="margin-bottom: 2rem;">
+                <div>
+                    <a href="index.html" class="logo mb-4" style="font-size: 1.25rem;">Health<span>Care</span></a>
+                    <p class="text-muted" style="font-size: 0.9rem;">Providing evidence-based dietary maps and exercise protocols for specialized health conditions.</p>
+                </div>
+                <div>
+                    <h4 class="mb-4">Quick Links</h4>
+                    <ul class="flex flex-col gap-2 text-muted" style="font-size: 0.9rem;">
+                        <li><a href="diseases.html">A-Z Diseases Map</a></li>
+                        <li><a href="diet-plans.html">Custom Diet Plans</a></li>
+                        <li><a href="workouts.html">Exercise Modules</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="mb-4">Contact</h4>
+                    <ul class="flex flex-col gap-2 text-muted" style="font-size: 0.9rem;">
+                        <li>Email: support@healthcare.com</li>
+                        <li>Phone: +1 (555) 123-4567</li>
+                        <li><a href="contact.html" style="color: var(--color-primary);">Book a Consultation &rarr;</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="disclaimer">
+                <strong>Medical Disclaimer:</strong> The information provided on this website is for educational purposes only and does not substitute for professional medical advice. Always consult a certified doctor or healthcare provider before starting any new diet or exercise plan.
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

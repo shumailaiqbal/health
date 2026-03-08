@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Health Tools & Diet Plans</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="header">
+            <div class="container nav">
+                <a href="index.html" class="logo">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-secondary)"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    Health<span>Care</span>
+                </a>
+                
+                <nav class="nav-links">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="diseases.html" class="nav-link">Diseases Base</a>
+                    <a href="diet-plans.html" class="nav-link active">Diet Plans</a>
+                    <a href="workouts.html" class="nav-link">Workouts</a>
+                    <a href="about.html" class="nav-link">About Us</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+
+                <div class="flex items-center gap-4">
+                    <button class="lang-toggle" id="langToggle">اردو</button>
+                    <button class="menu-btn" aria-label="Toggle Menu">☰</button>
+                </div>
+            </div>
+        </header>
+
+        <main style="padding: 4rem 0;">
+            <div class="container text-center mb-12">
+                <h1 style="font-size: 3rem; color: var(--color-primary-dark); margin-bottom: 1rem;">Diet Plans & Interactive Tools</h1>
+                <p class="text-muted" style="max-width: 600px; margin: 0 auto;">Calculate your current health metrics and automatically generate a personalized dietary summary based on your specific condition.</p>
+            </div>
+
+            <div class="container grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- BMI Calculator -->
+                <div class="card">
+                    <h2 class="mb-4" style="color: var(--color-primary-dark);">BMI Calculator</h2>
+                    <p class="text-muted mb-6">Enter your height and weight below to calculate your Body Mass Index (BMI).</p>
+                    
+                    <form id="bmiForm" onsubmit="event.preventDefault(); calculateBMI();">
+                        <div class="input-group">
+                            <label class="input-label" for="weight">Weight (kg)</label>
+                            <input type="number" id="weight" class="input-field" placeholder="e.g. 70" required min="1">
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label" for="height">Height (cm)</label>
+                            <input type="number" id="height" class="input-field" placeholder="e.g. 175" required min="1">
+                        </div>
+                        <button type="submit" class="btn btn-secondary w-full mt-4">Calculate BMI</button>
+                    </form>
+
+                    <div id="bmiResult" class="mt-6 text-center" style="display: none; padding: 1rem; border-radius: 0.5rem; background: var(--color-secondary-light);">
+                        <h3 style="color: var(--color-secondary-dark); font-size: 1.5rem;" id="bmiValue">--</h3>
+                        <p style="font-weight: 500;" id="bmiCategory">--</p>
+                    </div>
+                </div>
+
+                <!-- Plan Generator -->
+                <div class="card" style="border: 2px solid var(--color-primary-light);">
+                    <h2 class="mb-4" style="color: var(--color-primary-dark);">Plan Generator</h2>
+                    <p class="text-muted mb-6">Select your primary condition to generate and download a concise, printable one-page dietary summary.</p>
+                    
+                    <form id="planForm" onsubmit="event.preventDefault(); generatePlan();">
+                        <div class="input-group">
+                            <label class="input-label" for="conditionSelect">Select Health Condition</label>
+                            <select id="conditionSelect" class="input-field" required>
+                                <option value="" disabled selected>Choose a condition...</option>
+                                <option value="Diabetes">Diabetes</option>
+                                <option value="Hypertension">Hypertension</option>
+                                <option value="PCOS">PCOS / PCOD</option>
+                                <option value="Thyroid">Thyroid Disorders</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label" for="dietPreference">Dietary Preference</label>
+                            <select id="dietPreference" class="input-field">
+                                <option value="Standard">Standard Omnivore</option>
+                                <option value="Vegetarian">Vegetarian</option>
+                                <option value="Vegan">Vegan</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-full mt-4 flex justify-center gap-2 items-center">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                            Generate & Download PDF Snapshot
+                        </button>
+                    </form>
+                    
+                    <p id="planSuccessMessage" style="display: none; color: var(--color-secondary-dark); margin-top: 1rem; text-align: center; font-weight: 500;">
+                        Generating your customized plan snapshot... (Simulated browser print/PDF trigger)
+                    </p>
+                </div>
+
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="container grid grid-cols-3 gap-8" style="margin-bottom: 2rem;">
+                <div>
+                    <a href="index.html" class="logo mb-4" style="font-size: 1.25rem;">Health<span>Care</span></a>
+                    <p class="text-muted" style="font-size: 0.9rem;">Providing evidence-based dietary maps and exercise protocols for specialized health conditions.</p>
+                </div>
+                <div>
+                    <h4 class="mb-4">Quick Links</h4>
+                    <ul class="flex flex-col gap-2 text-muted" style="font-size: 0.9rem;">
+                        <li><a href="diseases.html">A-Z Diseases Map</a></li>
+                        <li><a href="diet-plans.html">Custom Diet Plans</a></li>
+                        <li><a href="workouts.html">Exercise Modules</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="mb-4">Contact</h4>
+                    <ul class="flex flex-col gap-2 text-muted" style="font-size: 0.9rem;">
+                        <li>Email: support@healthcare.com</li>
+                        <li>Phone: +1 (555) 123-4567</li>
+                        <li><a href="contact.html" style="color: var(--color-primary);">Book a Consultation &rarr;</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="disclaimer">
+                <strong>Medical Disclaimer:</strong> The information provided on this website is for educational purposes only and does not substitute for professional medical advice. Always consult a certified doctor or healthcare provider before starting any new diet or exercise plan.
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // BMI Calculator Logic
+        function calculateBMI() {
+            const weight = parseFloat(document.getElementById('weight').value);
+            const heightCm = parseFloat(document.getElementById('height').value);
+            
+            if (weight > 0 && heightCm > 0) {
+                const heightM = heightCm / 100;
+                const bmi = (weight / (heightM * heightM)).toFixed(1);
+                
+                let category = '';
+                let color = '';
+                
+                if (bmi < 18.5) {
+                    category = 'Underweight';
+                    color = '#f59e0b'; // Amber
+                } else if (bmi >= 18.5 && bmi < 24.9) {
+                    category = 'Normal weight';
+                    color = 'var(--color-secondary-dark)';
+                } else if (bmi >= 25 && bmi < 29.9) {
+                    category = 'Overweight';
+                    color = '#f59e0b';
+                } else {
+                    category = 'Obese';
+                    color = 'var(--color-danger)';
+                }
+                
+                const resultDiv = document.getElementById('bmiResult');
+                const valElem = document.getElementById('bmiValue');
+                const catElem = document.getElementById('bmiCategory');
+                
+                valElem.textContent = `Your BMI: ${bmi}`;
+                catElem.textContent = category;
+                catElem.style.color = color;
+                
+                resultDiv.style.display = 'block';
+            }
+        }
+
+        // Plan Generator Logic
+        function generatePlan() {
+            const condition = document.getElementById('conditionSelect').value;
+            const preference = document.getElementById('dietPreference').value;
+            
+            if (condition) {
+                const msg = document.getElementById('planSuccessMessage');
+                msg.style.display = 'block';
+                
+                // Simulate generation delay, then trigger browser print dialog
+                // In a real app we might use html2pdf.js or a backend generator.
+                setTimeout(() => {
+                    alert(`Your ${preference} diet plan for ${condition} is ready! Triggering PDF download dialog...`);
+                    window.print();
+                    msg.style.display = 'none';
+                }, 1000);
+            }
+        }
+    </script>
+</body>
+</html>

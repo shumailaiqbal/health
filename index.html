@@ -1,13 +1,177 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>health-guide</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health & Wellness - Disease-Specific Diet and Exercise Plans</title>
+    <meta name="description" content="Find specialized diet and exercise plans tailored for your specific health conditions.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Global Navigation -->
+        <header class="header">
+            <div class="container nav">
+                <a href="index.html" class="logo">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-secondary)"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    Health<span>Care</span>
+                </a>
+                
+                <nav class="nav-links">
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="diseases.html" class="nav-link">Diseases Base</a>
+                    <a href="diet-plans.html" class="nav-link">Diet Plans</a>
+                    <a href="workouts.html" class="nav-link">Workouts</a>
+                    <a href="about.html" class="nav-link">About Us</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+
+                <div class="flex items-center gap-4">
+                    <button class="lang-toggle" id="langToggle">اردو</button>
+                    <button class="menu-btn" aria-label="Toggle Menu">☰</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Hero Section -->
+            <section class="section" style="background: linear-gradient(to right bottom, var(--color-primary-light), var(--color-secondary-light)); padding-top: 6rem; padding-bottom: 8rem;">
+                <div class="container text-center flex flex-col items-center">
+                    <h1 style="font-size: 3.5rem; color: var(--color-primary-dark); margin-bottom: 1rem; max-width: 800px;">
+                        Manage Your Health with Specialized Plans
+                    </h1>
+                    <p class="text-muted" style="font-size: 1.25rem; max-width: 600px; margin-bottom: 3rem;">
+                        Discover personalized dietary charts and workout modules tailored for conditions like Diabetes, Hypertension, and PCOS.
+                    </p>
+                    
+                    <!-- Prominent Search Bar -->
+                    <div style="background: var(--color-white); padding: 0.5rem; border-radius: 9999px; display: flex; width: 100%; max-width: 600px; box-shadow: var(--shadow-lg);">
+                        <input type="text" placeholder="Find a diet for your condition (e.g. Diabetes)..." 
+                               style="flex: 1; border: none; background: transparent; padding: 1rem 1.5rem; font-size: 1rem; border-radius: 9999px; outline: none; color: var(--color-text-main);">
+                        <button class="btn btn-primary" style="padding: 1rem 2rem; border-radius: 9999px;">
+                            Search
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Common Diseases -->
+            <section class="section container">
+                <h2 class="section-title">Common Conditions</h2>
+                <div class="grid grid-cols-3 gap-8">
+                    <a href="guide.html?disease=diabetes" class="card text-center" style="display: block;">
+                        <div style="width: 60px; height: 60px; background: var(--color-primary-light); color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                            <!-- SVG Placeholder for Diabetes/Blood -->
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </div>
+                        <h3 class="mb-2">Diabetes</h3>
+                        <p class="text-muted" style="font-size: 0.9rem;">Manage blood sugar levels with low-GI foods and regular activity.</p>
+                    </a>
+                    
+                    <a href="guide.html?disease=hypertension" class="card text-center" style="display: block;">
+                        <div style="width: 60px; height: 60px; background: var(--color-secondary-light); color: var(--color-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                        </div>
+                        <h3 class="mb-2">Hypertension</h3>
+                        <p class="text-muted" style="font-size: 0.9rem;">DASH diet strategies and cardiovascular routines for heart health.</p>
+                    </a>
+
+                    <a href="guide.html?disease=pcos" class="card text-center" style="display: block;">
+                        <div style="width: 60px; height: 60px; background: #fce7f3; color: #db2777; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M12 3a9 9 0 0 1 9 9H3a9 9 0 0 1 9 9Z"/></svg>
+                        </div>
+                        <h3 class="mb-2">PCOD / PCOS</h3>
+                        <p class="text-muted" style="font-size: 0.9rem;">Hormone-balancing meal plans and targeted strength training.</p>
+                    </a>
+                </div>
+                <div class="text-center mt-8">
+                    <a href="diseases.html" class="btn btn-outline">View A-Z Directory</a>
+                </div>
+            </section>
+
+            <!-- Latest Health Tips & Success Stories (Split Section) -->
+            <section class="section" style="background: var(--color-white);">
+                <div class="container grid grid-cols-2 gap-8">
+                    <!-- Health Tips -->
+                    <div>
+                        <h2 class="mb-8" style="font-size: 2rem; color: var(--color-primary-dark);">Latest Health Tips</h2>
+                        <div class="flex flex-col gap-4">
+                            <div class="card flex gap-4 items-center" style="padding: 1rem;">
+                                <div style="width: 100px; height: 80px; background: var(--color-primary-light); border-radius: 0.5rem; flex-shrink: 0;"></div>
+                                <div>
+                                    <h4 class="mb-2">The Importance of Hydration</h4>
+                                    <p class="text-muted" style="font-size: 0.85rem;">Learn how drinking 8 glasses of water impacts cellular regeneration.</p>
+                                </div>
+                            </div>
+                            <div class="card flex gap-4 items-center" style="padding: 1rem;">
+                                <div style="width: 100px; height: 80px; background: var(--color-secondary-light); border-radius: 0.5rem; flex-shrink: 0;"></div>
+                                <div>
+                                    <h4 class="mb-2">Sleep and Weight Management</h4>
+                                    <p class="text-muted" style="font-size: 0.85rem;">Discover the hidden link between cortisol levels, sleep, and weight gain.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Success Stories -->
+                    <div>
+                        <h2 class="mb-8" style="font-size: 2rem; color: var(--color-primary-dark);">Success Stories</h2>
+                        <div class="card" style="background: var(--color-primary); color: var(--color-white); border: none;">
+                            <div class="flex gap-4 items-center mb-4">
+                                <div style="width: 50px; height: 50px; background: var(--color-white); border-radius: 50%; opacity: 0.8;"></div>
+                                <div>
+                                    <h4 style="color: var(--color-white);">Aisha K.</h4>
+                                    <p style="font-size: 0.85rem; opacity: 0.9;">Type 2 Diabetes</p>
+                                </div>
+                            </div>
+                            <p style="font-style: italic; line-height: 1.8;">
+                                "Following the structured dietary chart and low-impact yoga routines from this guide helped me bring my HbA1c down by 1.2 points in just three months. The 'foods to avoid' list made grocery shopping incredibly simple."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Sticky Footer & Medical Disclaimer -->
+        <footer class="footer">
+            <div class="container grid grid-cols-3 gap-8" style="margin-bottom: 2rem;">
+                <div>
+                    <a href="index.html" class="logo mb-4" style="font-size: 1.25rem;">Health<span>Care</span></a>
+                    <p class="text-muted" style="font-size: 0.9rem;">Providing evidence-based dietary maps and exercise protocols for specialized health conditions.</p>
+                </div>
+                <div>
+                    <h4 class="mb-4">Quick Links</h4>
+                    <ul class="flex flex-col gap-2 text-muted" style="font-size: 0.9rem;">
+                        <li><a href="diseases.html">A-Z Diseases Map</a></li>
+                        <li><a href="diet-plans.html">Custom Diet Plans</a></li>
+                        <li><a href="workouts.html">Exercise Modules</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="mb-4">Contact</h4>
+                    <ul class="flex flex-col gap-2 text-muted" style="font-size: 0.9rem;">
+                        <li>Email: support@healthcare.com</li>
+                        <li>Phone: +1 (555) 123-4567</li>
+                        <li><a href="contact.html" style="color: var(--color-primary);">Book a Consultation &rarr;</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="disclaimer">
+                <strong>Medical Disclaimer:</strong> The information provided on this website is for educational purposes only and does not substitute for professional medical advice. Always consult a certified doctor or healthcare provider before starting any new diet or exercise plan.
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
 </html>

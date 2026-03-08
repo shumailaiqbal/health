@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condition Guide - Health & Wellness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .guide-header {
+            background: linear-gradient(to right, var(--color-primary-light), var(--color-white));
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        .content-section {
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        .content-section:last-child {
+            border-bottom: none;
+        }
+
+        .diet-table-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .diet-table-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .diet-list {
+            background: var(--color-white);
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--color-border);
+        }
+
+        .diet-list-header {
+            padding: 1rem 1.5rem;
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .diet-list.eat .diet-list-header {
+            background: var(--color-secondary-light);
+            color: var(--color-secondary-dark);
+        }
+
+        .diet-list.avoid .diet-list-header {
+            background: var(--color-danger-light);
+            color: var(--color-danger);
+        }
+
+        .diet-list ul {
+            padding: 1rem 1.5rem;
+        }
+
+        .diet-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--color-border);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .diet-list li:last-child {
+            border-bottom: none;
+        }
+
+        .meal-plan-timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin-top: 2rem;
+        }
+
+        .meal-plan-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--color-primary-light);
+        }
+
+        .meal-item {
+            position: relative;
+            margin-bottom: 2rem;
+            background: var(--color-white);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .meal-item::before {
+            content: '';
+            position: absolute;
+            left: -2.4rem;
+            top: 1.5rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background: var(--color-primary);
+            border: 4px solid var(--color-white);
+            box-shadow: 0 0 0 2px var(--color-primary-light);
+        }
+
+        .video-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #e2e8f0;
+            border-radius: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-text-muted);
+            margin-top: 1.5rem;
+            border: 2px dashed #cbd5e1;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+
+        .video-placeholder:hover {
+            background: #f1f5f9;
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="header">
+            <div class="container nav">
+                <a href="index.html" class="logo">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-secondary)"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    Health<span>Care</span>
+                </a>
+                
+                <nav class="nav-links">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="diseases.html" class="nav-link active">Diseases Base</a>
+                    <a href="diet-plans.html" class="nav-link">Diet Plans</a>
+                    <a href="workouts.html" class="nav-link">Workouts</a>
+                    <a href="about.html" class="nav-link">About Us</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+
+                <div class="flex items-center gap-4">
+                    <button class="lang-toggle" id="langToggle">اردو</button>
+                    <button class="menu-btn" aria-label="Toggle Menu">☰</button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Guide Title Section -->
+            <div class="guide-header">
+                <div class="container">
+                    <a href="diseases.html" class="text-muted" style="display: inline-block; margin-bottom: 1rem; font-weight: 500;">&larr; Back to Directory</a>
+                    <h1 style="font-size: 3rem; color: var(--color-primary-dark); margin-bottom: 0.5rem;" id="guideTitle">Diabetes Management Guide</h1>
+                    <p class="text-muted" style="font-size: 1.1rem; max-width: 800px;">A comprehensive lifestyle, dietary, and workout plan designed to stabilize blood sugar levels and promote long-term metabolic health.</p>
+                </div>
+            </div>
+
+            <div class="container grid grid-cols-1 md:grid-cols-[3fr_1fr]" style="gap: 3rem;">
+                
+                <!-- Main Content -->
+                <div style="padding-bottom: 4rem;">
+                    
+                    <!-- Overview -->
+                    <section class="content-section" id="overview">
+                        <h2 style="font-size: 2rem; margin-bottom: 1rem; color: var(--color-primary-dark);">Condition Overview</h2>
+                        <p class="mb-4">Diabetes is a chronic metabolic condition characterized by elevated levels of blood glucose (or blood sugar). It occurs when the body either doesn't produce enough insulin or can't effectively use the insulin it makes.</p>
+                        <p>Through careful dietary management focusing on low-glycemic foods, paired with consistent physical activity, many individuals can significantly improve their blood sugar control and mitigate associated risks.</p>
+                    </section>
+
+                    <!-- Dietary Chart -->
+                    <section class="content-section" id="diet">
+                        <h2 style="font-size: 2rem; margin-bottom: 1rem; color: var(--color-primary-dark);">Dietary Chart</h2>
+                        <p class="text-muted">Focus on nutrient-dense, fiber-rich foods while minimizing processed carbs and hidden sugars.</p>
+                        
+                        <div class="diet-table-wrapper">
+                            <!-- Foods to Eat (Green) -->
+                            <div class="diet-list eat">
+                                <div class="diet-list-header">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+                                    Foods to Eat
+                                </div>
+                                <ul>
+                                    <li><span style="color: var(--color-secondary); font-weight: bold;">✓</span> Non-starchy vegetables (Spinach, Broccoli, Kale)</li>
+                                    <li><span style="color: var(--color-secondary); font-weight: bold;">✓</span> Whole grains (Quinoa, Brown Rice, Oats)</li>
+                                    <li><span style="color: var(--color-secondary); font-weight: bold;">✓</span> Lean proteins (Chicken breast, Fish, Tofu)</li>
+                                    <li><span style="color: var(--color-secondary); font-weight: bold;">✓</span> Healthy fats (Avocados, Nuts, Olive Oil)</li>
+                                    <li><span style="color: var(--color-secondary); font-weight: bold;">✓</span> Legumes (Lentils, Chickpeas)</li>
+                                </ul>
+                            </div>
+
+                            <!-- Foods to Avoid (Red) -->
+                            <div class="diet-list avoid">
+                                <div class="diet-list-header">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+                                    Foods to Avoid
+                                </div>
+                                <ul>
+                                    <li><span style="color: var(--color-danger); font-weight: bold;">✗</span> Sugary beverages (Sodas, Sweetened Teas)</li>
+                                    <li><span style="color: var(--color-danger); font-weight: bold;">✗</span> Refined carbohydrates (White Bread, Pastries)</li>
+                                    <li><span style="color: var(--color-danger); font-weight: bold;">✗</span> Highly processed snacks & fast food</li>
+                                    <li><span style="color: var(--color-danger); font-weight: bold;">✗</span> Sweetened yogurts and cereals</li>
+                                    <li><span style="color: var(--color-danger); font-weight: bold;">✗</span> Excessive alcohol consumption</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Daily Meal Plan -->
+                    <section class="content-section" id="meal-plan">
+                        <h2 style="font-size: 2rem; margin-bottom: 1rem; color: var(--color-primary-dark);">Daily Meal Plan Suggestion</h2>
+                        
+                        <div class="meal-plan-timeline">
+                            <div class="meal-item">
+                                <h4 style="color: var(--color-primary); margin-bottom: 0.5rem; font-size: 1.2rem;">Breakfast (8:00 AM)</h4>
+                                <p><strong>Oatmeal and Berries:</strong> 1/2 cup of rolled oats cooked in almond milk, topped with a handful of fresh blueberries, walnuts, and a pinch of cinnamon.</p>
+                            </div>
+                            <div class="meal-item">
+                                <h4 style="color: var(--color-primary); margin-bottom: 0.5rem; font-size: 1.2rem;">Lunch (1:00 PM)</h4>
+                                <p><strong>Grilled Chicken Salad:</strong> Mixed greens topped with grilled chicken breast, cherry tomatoes, cucumber, avocado, and a light olive oil & lemon dressing.</p>
+                            </div>
+                            <div class="meal-item">
+                                <h4 style="color: var(--color-primary); margin-bottom: 0.5rem; font-size: 1.2rem;">Dinner (7:00 PM)</h4>
+                                <p><strong>Baked Salmon with Greens:</strong> 4oz baked wild salmon prepared with lemon and herbs, served alongside steamed asparagus and 1/2 cup of quinoa.</p>
+                            </div>
+                            <div class="meal-item">
+                                <h4 style="color: var(--color-primary); margin-bottom: 0.5rem; font-size: 1.2rem;">Snack Options (Optional)</h4>
+                                <p>A small handful of almonds, celery sticks with hummus, or 1/2 of an apple with natural peanut butter.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Exercise Module -->
+                    <section class="content-section" id="exercise">
+                        <h2 style="font-size: 2rem; margin-bottom: 1rem; color: var(--color-primary-dark);">Exercise Recommendations</h2>
+                        <p class="mb-4">Cardiovascular exercise increases cellular sensitivity to insulin, helping your body utilize blood sugar more effectively. Aim for at least 150 minutes of moderate-intensity aerobic activity per week.</p>
+                        
+                        <h4 class="mb-2">Recommended Workouts:</h4>
+                        <ul style="list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1rem;">
+                            <li>Brisk walking for 30 minutes daily</li>
+                            <li>Low-impact cycling or swimming</li>
+                            <li>Light resistance training 2x per week</li>
+                        </ul>
+
+                        <!-- Video Placeholder -->
+                        <div class="video-placeholder">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1rem;"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4Z"/></svg>
+                            <span style="font-weight: 500;">Instructional Video: 20-Minute Low Impact Cardio for Blood Sugar Control</span>
+                            <span style="font-size: 0.8rem; margin-top: 0.5rem;">(Click to Play)</span>
+                        </div>
+                    </section>
+
+                </div>
+
+                <!-- Sidebar Desktop (Hidden on small screens via standard CSS if we wanted, but we'll leave it flowing) -->
+                <!-- We simulate md:grid-cols via just grid or standard styles. Since we didn't add full Tailwind, I'll inline a quick flex to fix sidebar. Actually, let me use inline styles to fix the grid layout for desktop smoothly. -->
+                <aside style="padding-top: 3rem;">
+                    <div class="card" style="position: sticky; top: 100px;">
+                        <h4 class="mb-4" style="border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem;">On this Page</h4>
+                        <ul class="flex flex-col gap-2">
+                            <li><a href="#overview" style="color: var(--color-text-muted);">Condition Overview</a></li>
+                            <li><a href="#diet" style="color: var(--color-text-muted);">Dietary Chart</a></li>
+                            <li><a href="#meal-plan" style="color: var(--color-text-muted);">Daily Meal Plan</a></li>
+                            <li><a href="#exercise" style="color: var(--color-text-muted);">Exercise Module</a></li>
+                        </ul>
+
+                        <div style="margin-top: 2rem;">
+                            <button class="btn btn-primary w-full flex items-center justify-center gap-2 mb-2" onclick="window.print()">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                                Download as PDF
+                            </button>
+                            <a href="contact.html" class="btn btn-outline w-full flex items-center justify-center">Consult a Doctor</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="container grid grid-cols-3 gap-8" style="margin-bottom: 2rem;">
+                <div>
+                    <a href="index.html" class="logo mb-4" style="font-size: 1.25rem;">Health<span>Care</span></a>
+                    <p class="text-muted" style="font-size: 0.9rem;">Providing evidence-based dietary maps and exercise protocols for specialized health conditions.</p>
+                </div>
+                <div>
+                    <h4 class="mb-4">Quick Links</h4>
+                    <ul class="flex flex-col gap-2 text-muted" style="font-size: 0.9rem;">
+                        <li><a href="diseases.html">A-Z Diseases Map</a></li>
+                        <li><a href="diet-plans.html">Custom Diet Plans</a></li>
+                        <li><a href="workouts.html">Exercise Modules</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="mb-4">Contact</h4>
+                    <ul class="flex flex-col gap-2 text-muted" style="font-size: 0.9rem;">
+                        <li>Email: support@healthcare.com</li>
+                        <li>Phone: +1 (555) 123-4567</li>
+                        <li><a href="contact.html" style="color: var(--color-primary);">Book a Consultation &rarr;</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="disclaimer">
+                <strong>Medical Disclaimer:</strong> The information provided on this website is for educational purposes only and does not substitute for professional medical advice. Always consult a certified doctor or healthcare provider before starting any new diet or exercise plan.
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Simple JS to handle 'disease' URL query parameter locally 
+        // to dynamically modify the guide title if needed.
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const disease = params.get('disease');
+            if (disease) {
+                const titleElement = document.getElementById('guideTitle');
+                // Format the string: 'pcos' -> 'PCOS', 'hypertension' -> 'Hypertension'
+                const formattedName = disease.charAt(0).toUpperCase() + disease.slice(1);
+                titleElement.textContent = `${formattedName} Management Guide`;
+                document.title = `${formattedName} Guide - Health & Wellness`;
+            }
+        });
+    </script>
+</body>
+</html>

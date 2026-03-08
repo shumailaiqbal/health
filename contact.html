@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Consultation - Health & Wellness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="header">
+            <div class="container nav">
+                <a href="index.html" class="logo">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-secondary)"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    Health<span>Care</span>
+                </a>
+                
+                <nav class="nav-links">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="diseases.html" class="nav-link">Diseases Base</a>
+                    <a href="diet-plans.html" class="nav-link">Diet Plans</a>
+                    <a href="workouts.html" class="nav-link">Workouts</a>
+                    <a href="about.html" class="nav-link">About Us</a>
+                    <a href="contact.html" class="nav-link active">Contact</a>
+                </nav>
+
+                <div class="flex items-center gap-4">
+                    <button class="lang-toggle" id="langToggle">اردو</button>
+                    <button class="menu-btn" aria-label="Toggle Menu">☰</button>
+                </div>
+            </div>
+        </header>
+
+        <main style="padding: 4rem 0;">
+            <div class="container text-center mb-12">
+                <h1 style="font-size: 3rem; color: var(--color-primary-dark); margin-bottom: 1rem;">Expert Consultation</h1>
+                <p class="text-muted" style="max-width: 600px; margin: 0 auto;">Connect with our certified nutritionists and medical experts to design a tailored plan uniquely suited for your physiology and lifestyle.</p>
+            </div>
+
+            <div class="container" style="max-width: 800px;">
+                <div class="card p-8">
+                    <form onsubmit="event.preventDefault(); alert('Consultation request sent successfully! Our team will contact you shortly.'); this.reset();">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="input-group">
+                                <label class="input-label" for="fname">First Name</label>
+                                <input type="text" id="fname" class="input-field" required>
+                            </div>
+                            <div class="input-group">
+                                <label class="input-label" for="lname">Last Name</label>
+                                <input type="text" id="lname" class="input-field" required>
+                            </div>
+                        </div>
+                        
+                        <div class="input-group mt-4">
+                            <label class="input-label" for="email">Email Address</label>
+                            <input type="email" id="email" class="input-field" required>
+                        </div>
+
+                        <div class="input-group mt-4">
+                            <label class="input-label" for="condition">Primary Health Condition</label>
+                            <select id="condition" class="input-field" required>
+                                <option value="" disabled selected>Select condition to discuss...</option>
+                                <option value="Diabetes">Diabetes</option>
+                                <option value="Hypertension">Hypertension</option>
+                                <option value="PCOS">PCOS / PCOD</option>
+                                <option value="Thyroid">Thyroid Disorders</option>
+                                <option value="Other">Other condition (describe below)</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group mt-4">
+                            <label class="input-label" for="message">Detailed Message (Optional)</label>
+                            <textarea id="message" class="input-field" rows="5" placeholder="Share any specific goals or medical history we should know about..." style="resize: vertical;"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-full mt-6" style="padding: 1rem; font-size: 1.1rem;">
+                            Request Consultation
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="container grid grid-cols-3 gap-8" style="margin-bottom: 2rem;">
+                <div>
+                    <a href="index.html" class="logo mb-4" style="font-size: 1.25rem;">Health<span>Care</span></a>
+                    <p class="text-muted" style="font-size: 0.9rem;">Providing evidence-based dietary maps and exercise protocols for specialized health conditions.</p>
+                </div>
+                <div>
+                    <h4 class="mb-4">Quick Links</h4>
+                    <ul class="flex flex-col gap-2 text-muted" style="font-size: 0.9rem;">
+                        <li><a href="diseases.html">A-Z Diseases Map</a></li>
+                        <li><a href="diet-plans.html">Custom Diet Plans</a></li>
+                        <li><a href="workouts.html">Exercise Modules</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="mb-4">Contact</h4>
+                    <ul class="flex flex-col gap-2 text-muted" style="font-size: 0.9rem;">
+                        <li>Email: support@healthcare.com</li>
+                        <li>Phone: +1 (555) 123-4567</li>
+                        <li><a href="contact.html" style="color: var(--color-primary);">Book a Consultation &rarr;</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="disclaimer">
+                <strong>Medical Disclaimer:</strong> The information provided on this website is for educational purposes only and does not substitute for professional medical advice. Always consult a certified doctor or healthcare provider before starting any new diet or exercise plan.
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

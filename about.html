@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert Blog - Health & Wellness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="header">
+            <div class="container nav">
+                <a href="index.html" class="logo">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-secondary)"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    Health<span>Care</span>
+                </a>
+                
+                <nav class="nav-links">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="diseases.html" class="nav-link">Diseases Base</a>
+                    <a href="diet-plans.html" class="nav-link">Diet Plans</a>
+                    <a href="workouts.html" class="nav-link">Workouts</a>
+                    <a href="about.html" class="nav-link active">About Us</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+
+                <div class="flex items-center gap-4">
+                    <button class="lang-toggle" id="langToggle">اردو</button>
+                    <button class="menu-btn" aria-label="Toggle Menu">☰</button>
+                </div>
+            </div>
+        </header>
+
+        <main style="padding: 4rem 0;">
+            <div class="container text-center mb-12">
+                <h1 style="font-size: 3rem; color: var(--color-primary-dark); margin-bottom: 1rem;">Expert Health Articles</h1>
+                <p class="text-muted" style="max-width: 600px; margin: 0 auto;">Read our latest evidence-based articles authored by certified nutritionists and medical professionals.</p>
+            </div>
+
+            <div class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Blog Article Card -->
+                <article class="card flex flex-col" style="padding: 0; overflow: hidden;">
+                    <div style="height: 200px; background: var(--color-primary-light); display: flex; align-items: center; justify-content: center; color: var(--color-primary);">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                    <div style="padding: 1.5rem; flex: 1; display: flex; flex-direction: column;">
+                        <span style="font-size: 0.8rem; font-weight: 600; color: var(--color-secondary-dark); text-transform: uppercase; margin-bottom: 0.5rem;">Cardiology</span>
+                        <h3 class="mb-2">Understanding the DASH Diet for Hypertension</h3>
+                        <p class="text-muted mb-4" style="font-size: 0.9rem; flex: 1;">Discover the core principles of the Dietary Approaches to Stop Hypertension (DASH) and how it actively lowers blood pressure.</p>
+                        <a href="#" class="btn btn-outline" style="align-self: flex-start; padding: 0.5rem 1rem; font-size: 0.9rem;">Read Full Article</a>
+                    </div>
+                </article>
+
+                <article class="card flex flex-col" style="padding: 0; overflow: hidden;">
+                    <div style="height: 200px; background: #fce7f3; display: flex; align-items: center; justify-content: center; color: #db2777;">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M12 3a9 9 0 0 1 9 9H3a9 9 0 0 1 9 9Z"/></svg>
+                    </div>
+                    <div style="padding: 1.5rem; flex: 1; display: flex; flex-direction: column;">
+                        <span style="font-size: 0.8rem; font-weight: 600; color: var(--color-secondary-dark); text-transform: uppercase; margin-bottom: 0.5rem;">Women's Health</span>
+                        <h3 class="mb-2">Seed Cycling for Hormonal Balance</h3>
+                        <p class="text-muted mb-4" style="font-size: 0.9rem; flex: 1;">A deep dive into how incorporating specific seeds into your diet can naturally mitigate PCOS symptoms and support estrogen/progesterone balance.</p>
+                        <a href="#" class="btn btn-outline" style="align-self: flex-start; padding: 0.5rem 1rem; font-size: 0.9rem;">Read Full Article</a>
+                    </div>
+                </article>
+
+                <article class="card flex flex-col" style="padding: 0; overflow: hidden;">
+                    <div style="height: 200px; background: var(--color-secondary-light); display: flex; align-items: center; justify-content: center; color: var(--color-secondary-dark);">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><line x1="10" x2="8" y1="9" y2="9"/></svg>
+                    </div>
+                    <div style="padding: 1.5rem; flex: 1; display: flex; flex-direction: column;">
+                        <span style="font-size: 0.8rem; font-weight: 600; color: var(--color-secondary-dark); text-transform: uppercase; margin-bottom: 0.5rem;">Nutrition</span>
+                        <h3 class="mb-2">The Hidden Sugars in "Healthy" Foods</h3>
+                        <p class="text-muted mb-4" style="font-size: 0.9rem; flex: 1;">Many products marketed as health foods are packed with added sugars. Learn how to read labels effectively.</p>
+                        <a href="#" class="btn btn-outline" style="align-self: flex-start; padding: 0.5rem 1rem; font-size: 0.9rem;">Read Full Article</a>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="container text-center mt-12">
+                <a href="contact.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">Seeking Professional Guidance? Book a Consultation</a>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="container grid grid-cols-3 gap-8" style="margin-bottom: 2rem;">
+                <div>
+                    <a href="index.html" class="logo mb-4" style="font-size: 1.25rem;">Health<span>Care</span></a>
+                    <p class="text-muted" style="font-size: 0.9rem;">Providing evidence-based dietary maps and exercise protocols for specialized health conditions.</p>
+                </div>
+                <div>
+                    <h4 class="mb-4">Quick Links</h4>
+                    <ul class="flex flex-col gap-2 text-muted" style="font-size: 0.9rem;">
+                        <li><a href="diseases.html">A-Z Diseases Map</a></li>
+                        <li><a href="diet-plans.html">Custom Diet Plans</a></li>
+                        <li><a href="workouts.html">Exercise Modules</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="mb-4">Contact</h4>
+                    <ul class="flex flex-col gap-2 text-muted" style="font-size: 0.9rem;">
+                        <li>Email: support@healthcare.com</li>
+                        <li>Phone: +1 (555) 123-4567</li>
+                        <li><a href="contact.html" style="color: var(--color-primary);">Book a Consultation &rarr;</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="disclaimer">
+                <strong>Medical Disclaimer:</strong> The information provided on this website is for educational purposes only and does not substitute for professional medical advice. Always consult a certified doctor or healthcare provider before starting any new diet or exercise plan.
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
